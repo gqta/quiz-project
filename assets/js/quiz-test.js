@@ -62,11 +62,21 @@ function genQuizByTerm(quizData) {
                 }
             }
 
-            quizList.push({
-                quizId: id,
-                question: element.definition,
-                answers
-            });
+            if (Math.round(Math.random())) {
+                quizList.push({
+                    quizId: id,
+                    question: element.definition,
+                    answers
+                });
+            } else {
+                quizList.unshift({
+                    quizId: id,
+                    question: element.definition,
+                    answers
+                });
+            }
+
+
 
         }
     }
@@ -114,11 +124,20 @@ function genQuizByDefinition(quizData) {
                 }
             }
 
-            quizList.push({
-                quizId: id,
-                question: element.term,
-                answers
-            });
+            if (Math.round(Math.random())) {
+                quizList.push({
+                    quizId: id,
+                    question: element.term,
+                    answers
+                });
+            } else {
+                quizList.unshift({
+                    quizId: id,
+                    question: element.term,
+                    answers
+                });
+            }
+            
 
         }
     }
@@ -153,9 +172,9 @@ $(document).ready(() => {
 
     // 
 
-    $("#quiz-test-box").html(genQuizByTerm(quizData).map((el, index) => getQuestion(index+1, el.quizId, el.question, el.answers)).join("\n"));
+    $("#quiz-test-box").html(genQuizByTerm(quizData).map((el, index) => getQuestion(index + 1, el.quizId, el.question, el.answers)).join("\n"));
 
-    $("#btn-retake-quiz").click(()=>{
+    $("#btn-retake-quiz").click(() => {
 
         // handle data here 
         // after that re-render data
@@ -164,13 +183,13 @@ $(document).ready(() => {
 
         let isTermQuiz = document.getElementById("quiz-type-term").checked;
 
-        if(isTermQuiz){
-            $("#quiz-test-box").html(genQuizByTerm(quizData).map((el, index) => getQuestion(index+1, el.quizId, el.question, el.answers)).join("\n"));
-        }else{
-            $("#quiz-test-box").html(genQuizByDefinition(quizData).map((el, index) => getQuestion(index+1, el.quizId, el.question, el.answers)).join("\n"));
+        if (isTermQuiz) {
+            $("#quiz-test-box").html(genQuizByTerm(quizData).map((el, index) => getQuestion(index + 1, el.quizId, el.question, el.answers)).join("\n"));
+        } else {
+            $("#quiz-test-box").html(genQuizByDefinition(quizData).map((el, index) => getQuestion(index + 1, el.quizId, el.question, el.answers)).join("\n"));
         }
 
-        
+
     })
 
     $("#submit-button").click((e) => {
@@ -212,7 +231,7 @@ $(document).ready(() => {
     amountFeild.onkeypress = (evt) => {
         var charCode = (evt.which) ? evt.which : evt.keyCode;
         let newVal = parseInt(amountFeild.value + evt.key);
-        if (charCode > 31 && (charCode < 48 || charCode > 57) || (isNaN(newVal) || newVal > amount || newVal <=0 ))
+        if (charCode > 31 && (charCode < 48 || charCode > 57) || (isNaN(newVal) || newVal > amount || newVal <= 0))
             return false;
         return true;
     }

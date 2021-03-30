@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Education | Template</title>
+    <title>VNI101</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/icon/favicon.png">
@@ -36,7 +36,7 @@
                                 <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
                             </div>
 
-                            <form action="#" class="form-box">
+                            <form action="search.html" class="form-box">
                                 <input type="text" name="Search" placeholder="Search courses..">
                                 <div class="search-icon">
                                     <i class="ti-search"></i>
@@ -51,10 +51,13 @@
                                     <li><a href="courses.html">Thư viện của bạn</a></li>
 
                                     <li>
-                                        <a href="#" class="quiz-add"> Học phần mới </a>
+                                        <a href="add.html" class="quiz-add"> Học phần mới </a>
                                     </li>
                                     <li>
                                         <a href="login.html" class="btn header-btn2">Sign In</a>
+                                    </li>
+                                    <li>
+                                        <a href="register.html" class="btn header-btn2">Sign Up</a>
                                     </li>
                                 </ul>
                             </nav>
@@ -71,24 +74,25 @@
     <main>
         <section class="sticky-left d-sm-block">
             <div class="row text-center quiz-learn-back">
-                <a href="quiz.html" ><i class="fas fa-arrow-left"></i>Back</a>
+                <a href="quiz.html"><i class="fas fa-arrow-left"></i>Back</a>
             </div>
             <div class="row text-center quiz-setting">
                 <h4>Setting</h4>
             </div>
 
-            <div class="row quiz-setting" >
+            <div class="row quiz-setting">
                 <div class="col-sm-10"><label>Trả lời bằng: </label></div>
                 <div class="col-sm-2"></div>
             </div>
             <div class="row quiz-setting">
                 <table class="quiz-form-type">
                     <tr>
-                        <td><input type="radio"  name="quiz-type" id="quiz-type-term" value="1" /></td>
+                        <td><input type="radio" name="quiz-type" id="quiz-type-term" value="1" /></td>
                         <td> <label id="quiz-amount-number">Thuật ngữ</label></td>
                     </tr>
                     <tr>
-                        <td><input type="radio" id="quiz-amount-input" name="quiz-type" id="quiz-type-definition" value="0" checked />
+                        <td><input type="radio" id="quiz-amount-input" name="quiz-type" id="quiz-type-definition"
+                                value="0" checked />
                         </td>
                         <td><label id="quiz-amount-number">Định Nghĩa</label></td>
                     </tr>
@@ -103,7 +107,7 @@
             <div class="row quiz-learn-statistic">
                 <table class="quiz-table-statistic">
                     <tr>
-                        <td >Thành thạo</td>
+                        <td>Thành thạo</td>
                         <td style="color: green;">10</td>
                     </tr>
                     <tr>
@@ -127,11 +131,11 @@
             </div>
             <div class="row quiz-setting">
                 <h3 class="quiz-result" id="quiz-result">
-                   0%
+                    0%
                 </h3>
 
             </div>
-            
+
             <div class="row quiz-setting">
                 <button class="btn quiz-retake-button" id="btn-retake-quiz">Bắt đầu lại</button>
 
@@ -141,28 +145,27 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-1">
-                    
+
                 </div>
-                <div class="col-sm-12 col-md-10">
-                    <div class="question-box">
-                        <div class="row quiz-question-box">
-            
-                        </div>
-                        <div class="row quiz-answer-box">
-                            <div class="col-sm-12 col-md-3"><button class="quiz-answer-button">A</button></div>
-                            <div class="col-sm-12 col-md-3"><button class="quiz-answer-button">B</button></div>
-                            <div class="col-sm-12 col-md-3"><button class="quiz-answer-button">C</button></div>
-                            <div class="col-sm-12 col-md-3"><button class="quiz-answer-button">D</button></div>
-                        </div>
-                    </div>
+                <div class="col-sm-12 col-md-10" id="question-box">
+                    
                 </div>
                 <div class="col-sm-12 col-md-1">
-                    
+
                 </div>
             </div>
         </div>
-        
-        
+
+        <div class="modal" tabindex="-1" role="dialog" id="result">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-body" id="quiz-modal-result">
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+
 
     </main>
 
